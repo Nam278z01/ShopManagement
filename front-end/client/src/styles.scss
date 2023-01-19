@@ -1,0 +1,245 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+      font-family: 'Open Sans', sans-serif;
+  }
+  * {
+      box-sizing: border-box;
+  }
+}
+
+@import "~boxicons/css/boxicons.min.css";
+
+img {
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+}
+
+/* add to img on load event */
+.animate {
+  animation: animate 1s ease;
+}
+
+@keyframes animate {
+  from {
+      transform: rotateX(20deg);
+      opacity: 0;
+  }
+  to {
+      transform: rotateX(0deg);
+      opacity: 1;
+  }
+}
+
+/* skeleton elements */
+.skeleton {
+  background: linear-gradient(
+      90deg,
+      hsl(210, 15%, 88%),
+      hsl(210, 15%, 95%),
+      hsl(210, 15%, 88%)
+  );
+  background-size: 200%;
+  animation: loader 1s infinite reverse;
+}
+
+/* skeleton animation */
+@keyframes loader {
+  from {
+      background-position: -100% 0;
+  }
+  to {
+      background-position: 100% 0;
+  }
+}
+
+/* Scrollbar */
+.scrollbar::-webkit-scrollbar {
+  width: 2px;
+  background-color: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  width: 2px;
+  background-color: transparent;
+}
+
+.scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: #fa6338;
+}
+
+/* Loading */
+.loading {
+  position: fixed;
+  display: flex;
+  z-index: 1000;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.loading.hidden {
+  opacity: 0;
+  visibility: hidden;
+  animation: fadeOut 0.5s linear;
+}
+
+.loading img {
+  width: 100px;
+  margin: auto;
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}
+
+img {
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+}
+
+// Toast
+@import 'ngx-toastr/toastr';
+
+// swiper
+@import "swiper/css";
+@import "swiper/css/free-mode";
+@import "swiper/css/navigation";
+@import "swiper/css/thumbs";
+@import "swiper/css/pagination";
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.mySwiper2 {
+  height: 80%;
+}
+
+.mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 5px 0;
+  width: 60%;
+}
+
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// Custome buttom swiper
+.swiper-button-prev, .swiper-button-next {
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  color: black;
+  font-weight: 700;
+  outline: 0;
+  transition: background-color .2s ease, color .2s ease;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 8%);
+
+  &::after {
+      font-size: 16px;
+  }
+}
+
+.swiper-button-prev {
+  &:after {
+      position: relative;
+      left: -1px;
+  }
+}
+
+.swiper-button-next {
+  &:after {
+      position: relative;
+      left: 1px;
+  }
+}
+
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+  left: 5px;
+  right: auto;
+}
+
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+  right: 5px;
+  left: auto;
+}
+
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+  opacity: 0;
+  cursor: auto;
+  pointer-events: none;
+}
